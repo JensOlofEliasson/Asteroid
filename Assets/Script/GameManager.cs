@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
     public Button exitButton;
     public Button restartButton;
     public GameObject player;
-    public GameObject asterioid;
-    public GameObject asterioid2;
-    public GameObject asterioid3;
+    public GameObject asteroid;
+    public GameObject asteroid2;
+    public GameObject asteroid3;
 
     public int score;
     public int highScore;
@@ -24,10 +24,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        isGameActive = false;
         player.gameObject.SetActive(false);
-        asterioid.gameObject.SetActive(false);
-        asterioid2.gameObject.SetActive(false);
-        asterioid3.gameObject.SetActive(false);
+        asteroid.gameObject.SetActive(false);
+        asteroid2.gameObject.SetActive(false);
+        asteroid3.gameObject.SetActive(false);
         score = 0;
         playButton.gameObject.SetActive(true);
         exitButton.gameObject.SetActive(true);
@@ -57,9 +58,9 @@ public class GameManager : MonoBehaviour
         exitButton.gameObject.SetActive(false);
         isGameActive = true;
         player.gameObject.SetActive(true);
-        asterioid.gameObject.SetActive(true);
-        asterioid2.gameObject.SetActive(true);
-        asterioid3.gameObject.SetActive(true);
+        asteroid.gameObject.SetActive(true);
+        asteroid2.gameObject.SetActive(true);
+        asteroid3.gameObject.SetActive(true);
     }
 
     public void Exit()   

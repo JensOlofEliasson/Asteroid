@@ -12,6 +12,7 @@ TagManager:
   - WallDown
   - Asterioid
   - Ammo
+  - Asteroid
   layers:
   - Default
   - TransparentFX

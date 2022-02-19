@@ -1996,9 +1996,9 @@ MonoBehaviour:
   exitButton: {fileID: 346837567}
   restartButton: {fileID: 669216774}
   player: {fileID: 933777972}
-  asterioid: {fileID: 1801402122}
-  asterioid2: {fileID: 30892370}
-  asterioid3: {fileID: 136595428}
+  asteroid: {fileID: 1801402122}
+  asteroid2: {fileID: 30892370}
+  asteroid3: {fileID: 136595428}
   score: 0
   highScore: 0
   isGameActive: 0
@@ -2217,6 +2217,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 166916822, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1989290134}
     - target: {fileID: 4182593495994341042, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2224,10 +2228,6 @@ PrefabInstance:
     - target: {fileID: 4182593495994341042, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4182593495994341042, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4182593495994341054, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
       propertyPath: m_RootOrder
