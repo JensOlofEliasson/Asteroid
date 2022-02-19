@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
         asteroid2.gameObject.SetActive(false);
         asteroid3.gameObject.SetActive(false);
         score = 0;
+        LoadHighScore();
+        highScoreText.text = "HIGHSCORE: " + highScore; 
         playButton.gameObject.SetActive(true);
         exitButton.gameObject.SetActive(true);
     }
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour
         {
             highScore = score;
             highScoreText.text = "HIGHSCORE: " + score;
+            SaveHighScore();
         }
         
     }
@@ -74,5 +78,34 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    [System.Serializable]
+    class SaveData
+    {
+        public int highScore;
+    }
+
+    public void SaveHighScore()
+    {
+        SaveData data = new SaveData();
+        data.highScore = highScore;
+
+        string json = JsonUtility.ToJson(data);
+
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+    }
+
+    public void LoadHighScore()
+    {
+        string path = Application.persistentDataPath + "/savefile.json";
+        if(File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
+
+            highScore = data.highScore;
+        }
+    }
+
 
 }
