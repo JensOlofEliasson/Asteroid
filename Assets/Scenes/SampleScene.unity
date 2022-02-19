@@ -2217,10 +2217,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 59812822, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 80823551, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 166916820, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 166916822, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
+      propertyPath: spawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 166916822, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1989290134}
+    - target: {fileID: 856432139, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4182593495994341042, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2228,6 +2248,10 @@ PrefabInstance:
     - target: {fileID: 4182593495994341042, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182593495994341048, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4182593495994341054, guid: d7b71baa4b4732a4c9fef8afbbeca8cf, type: 3}
       propertyPath: m_RootOrder

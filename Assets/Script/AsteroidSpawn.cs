@@ -21,6 +21,10 @@ public class AsteroidSpawn : MonoBehaviour
         {           
             yield return new WaitForSeconds(spawnTime);
             Instantiate(asteroid, transform.position, transform.rotation);
+            if (spawnTime > 1)
+            {
+                spawnTime -= 0.1f;
+            }
         }
     }
 } 
