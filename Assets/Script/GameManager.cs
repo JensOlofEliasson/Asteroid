@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI newHighScoreText;
+    public TMP_InputField inputName;
+    public string highScoreName;
     public Button playButton;
     public Button exitButton;
     public Button restartButton;
@@ -30,9 +33,11 @@ public class GameManager : MonoBehaviour
         asteroid.gameObject.SetActive(false);
         asteroid2.gameObject.SetActive(false);
         asteroid3.gameObject.SetActive(false);
+        scoreText.gameObject.SetActive(false);
         score = 0;
         LoadHighScore();
-        highScoreText.text = "HIGHSCORE: " + highScore; 
+        highScoreText.text = "HIGHSCORE: " + highScore + " " + highScoreName;
+        highScoreText.gameObject.SetActive(true);
         playButton.gameObject.SetActive(true);
         exitButton.gameObject.SetActive(true);
     }
@@ -46,21 +51,38 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameActive = false;
-        restartButton.gameObject.SetActive(true);
         if (score > highScore)
         {
-            highScore = score;
-            highScoreText.text = "HIGHSCORE: " + score;
-            SaveHighScore();
+            newHighScoreText.gameObject.SetActive(true);
+            inputName.gameObject.SetActive(true);
+        }
+        else
+        { 
+            restartButton.gameObject.SetActive(true);
+            highScoreText.gameObject.SetActive(true);
         }
         
+    }
+
+    public void NewHighScore()
+    {
+        highScoreName = inputName.text;
+        newHighScoreText.gameObject.SetActive(false);
+        inputName.gameObject.SetActive(false);
+        highScore = score;
+        highScoreText.text = "HIGHSCORE: " + score + " " +highScoreName;
+        restartButton.gameObject.SetActive(true);
+        highScoreText.gameObject.SetActive(true);
+        SaveHighScore();
     }
 
     public void Play()
     {
         playButton.gameObject.SetActive(false);
         exitButton.gameObject.SetActive(false);
+        highScoreText.gameObject.SetActive(false);
         isGameActive = true;
+        scoreText.gameObject.SetActive(true);
         player.gameObject.SetActive(true);
         asteroid.gameObject.SetActive(true);
         asteroid2.gameObject.SetActive(true);
@@ -83,12 +105,14 @@ public class GameManager : MonoBehaviour
     class SaveData
     {
         public int highScore;
+        public string highScoreName;
     }
 
     public void SaveHighScore()
     {
         SaveData data = new SaveData();
         data.highScore = highScore;
+        data.highScoreName = highScoreName;
 
         string json = JsonUtility.ToJson(data);
 
@@ -104,6 +128,7 @@ public class GameManager : MonoBehaviour
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
             highScore = data.highScore;
+            highScoreName = data.highScoreName;
         }
     }
 

@@ -24,7 +24,7 @@ public class Asteroid2 : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Ammo"))
         {
-            gameManager.UpdateScore(1);
+            gameManager.UpdateScore(200);
             Destroy(gameObject);
             Destroy(other.gameObject);
             Instantiate(asteroid3, transform.position, transform.rotation);

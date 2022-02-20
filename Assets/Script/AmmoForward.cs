@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AmmoForward : MonoBehaviour
 {
-    public float speed = 40f;
-    public float timeToDestroy = 2;
+    float speed = 20f;
+    float timeToDestroy = 0.8f;
 
     private void Start()
     {
