@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
     public TextMeshProUGUI newHighScoreText;
+    public TextMeshProUGUI asteroidText;
     public TMP_InputField inputName;
     public string highScoreName;
     public Button playButton;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         LoadHighScore();
         highScoreText.text = "HIGHSCORE: " + highScore + " " + highScoreName;
+        asteroidText.gameObject.SetActive(true);
         highScoreText.gameObject.SetActive(true);
         playButton.gameObject.SetActive(true);
         exitButton.gameObject.SetActive(true);
@@ -81,6 +83,7 @@ public class GameManager : MonoBehaviour
         playButton.gameObject.SetActive(false);
         exitButton.gameObject.SetActive(false);
         highScoreText.gameObject.SetActive(false);
+        asteroidText.gameObject.SetActive(false);
         isGameActive = true;
         scoreText.gameObject.SetActive(true);
         player.gameObject.SetActive(true);
